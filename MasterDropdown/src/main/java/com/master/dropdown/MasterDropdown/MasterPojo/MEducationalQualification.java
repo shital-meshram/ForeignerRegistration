@@ -1,4 +1,4 @@
-package com.master.dropdown.MasterDropdown.Master;
+package com.master.dropdown.MasterDropdown.MasterPojo;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -10,26 +10,29 @@ import java.util.Date;
 
 
 /**
- * The persistent class for the m_relation_type database table.
+ * The persistent class for the m_educational_qualification database table.
  * 
  */
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Table(name="m_relation_type")
-@NamedQuery(name="MRelationType.findAll", query="SELECT m FROM MRelationType m")
-public class MRelationType implements Serializable {
+@Table(name="m_educational_qualification")
+@NamedQuery(name="MEducationalQualification.findAll", query="SELECT m FROM MEducationalQualification m")
+public class MEducationalQualification implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@EmbeddedId
-	private MRelationTypePK id;
+	private MEducationalQualificationPK id;
 
 	@Column(name="DUMMY_COLUMN_1")
 	private String dummyColumn1;
 
 	@Column(name="DUMMY_COLUMN_2")
 	private String dummyColumn2;
+
+	@Column(name="EDU_QUAL")
+	private String eduQual;
 
 	@Column(name="IS_FIRST_SYNC_DONE")
 	private String isFirstSyncDone;
@@ -63,9 +66,6 @@ public class MRelationType implements Serializable {
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name="RECORD_UPDATED_ON")
 	private Date recordUpdatedOn;
-
-	@Column(name="RELATION_TYPE")
-	private String relationType;
 
 
 

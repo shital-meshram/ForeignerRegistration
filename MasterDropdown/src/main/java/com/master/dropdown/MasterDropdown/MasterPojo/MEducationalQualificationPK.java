@@ -1,4 +1,4 @@
-package com.master.dropdown.MasterDropdown.Master;
+package com.master.dropdown.MasterDropdown.MasterPojo;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -8,19 +8,19 @@ import lombok.NoArgsConstructor;
 import java.io.Serializable;
 
 /**
- * The primary key class for the m_gender database table.
+ * The primary key class for the m_educational_qualification database table.
  * 
  */
 @Embeddable
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class MGenderPK implements Serializable {
+public class MEducationalQualificationPK implements Serializable {
 	//default serial version id, required for serializable classes.
 	private static final long serialVersionUID = 1L;
 
-	@Column(name="GENDER_CD")
-	private int genderCd;
+	@Column(name="EDU_QUAL_CD")
+	private int eduQualCd;
 
 	@Column(name="LANG_CD")
 	private int langCd;
@@ -31,19 +31,19 @@ public class MGenderPK implements Serializable {
 		if (this == other) {
 			return true;
 		}
-		if (!(other instanceof MGenderPK)) {
+		if (!(other instanceof MEducationalQualificationPK)) {
 			return false;
 		}
-		MGenderPK castOther = (MGenderPK)other;
+		MEducationalQualificationPK castOther = (MEducationalQualificationPK)other;
 		return 
-			(this.genderCd == castOther.genderCd)
+			(this.eduQualCd == castOther.eduQualCd)
 			&& (this.langCd == castOther.langCd);
 	}
 
 	public int hashCode() {
 		final int prime = 31;
 		int hash = 17;
-		hash = hash * prime + this.genderCd;
+		hash = hash * prime + this.eduQualCd;
 		hash = hash * prime + this.langCd;
 		
 		return hash;

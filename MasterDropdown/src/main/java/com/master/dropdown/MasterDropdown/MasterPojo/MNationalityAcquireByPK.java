@@ -1,4 +1,4 @@
-package com.master.dropdown.MasterDropdown.Master;
+package com.master.dropdown.MasterDropdown.MasterPojo;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -8,19 +8,19 @@ import lombok.NoArgsConstructor;
 import java.io.Serializable;
 
 /**
- * The primary key class for the m_relation_type database table.
+ * The primary key class for the m_nationality_acquire_by database table.
  * 
  */
 @Embeddable
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class MRelationTypePK implements Serializable {
+public class MNationalityAcquireByPK implements Serializable {
 	//default serial version id, required for serializable classes.
 	private static final long serialVersionUID = 1L;
 
-	@Column(name="RELATION_TYPE_CD")
-	private int relationTypeCd;
+	@Column(name="NATION_AQUR_BY_CD")
+	private int nationAqurByCd;
 
 	@Column(name="LANG_CD")
 	private int langCd;
@@ -31,19 +31,19 @@ public class MRelationTypePK implements Serializable {
 		if (this == other) {
 			return true;
 		}
-		if (!(other instanceof MRelationTypePK)) {
+		if (!(other instanceof MNationalityAcquireByPK)) {
 			return false;
 		}
-		MRelationTypePK castOther = (MRelationTypePK)other;
+		MNationalityAcquireByPK castOther = (MNationalityAcquireByPK)other;
 		return 
-			(this.relationTypeCd == castOther.relationTypeCd)
+			(this.nationAqurByCd == castOther.nationAqurByCd)
 			&& (this.langCd == castOther.langCd);
 	}
 
 	public int hashCode() {
 		final int prime = 31;
 		int hash = 17;
-		hash = hash * prime + this.relationTypeCd;
+		hash = hash * prime + this.nationAqurByCd;
 		hash = hash * prime + this.langCd;
 		
 		return hash;

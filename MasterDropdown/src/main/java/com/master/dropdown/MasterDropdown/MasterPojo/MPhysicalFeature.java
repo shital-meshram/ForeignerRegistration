@@ -1,4 +1,4 @@
-package com.master.dropdown.MasterDropdown.Master;
+package com.master.dropdown.MasterDropdown.MasterPojo;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -10,20 +10,20 @@ import java.util.Date;
 
 
 /**
- * The persistent class for the m_educational_qualification database table.
+ * The persistent class for the m_physical_features database table.
  * 
  */
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Table(name="m_educational_qualification")
-@NamedQuery(name="MEducationalQualification.findAll", query="SELECT m FROM MEducationalQualification m")
-public class MEducationalQualification implements Serializable {
+@Table(name="m_physical_features")
+@NamedQuery(name="MPhysicalFeature.findAll", query="SELECT m FROM MPhysicalFeature m")
+public class MPhysicalFeature implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@EmbeddedId
-	private MEducationalQualificationPK id;
+	private MPhysicalFeaturePK id;
 
 	@Column(name="DUMMY_COLUMN_1")
 	private String dummyColumn1;
@@ -31,11 +31,14 @@ public class MEducationalQualification implements Serializable {
 	@Column(name="DUMMY_COLUMN_2")
 	private String dummyColumn2;
 
-	@Column(name="EDU_QUAL")
-	private String eduQual;
-
 	@Column(name="IS_FIRST_SYNC_DONE")
 	private String isFirstSyncDone;
+
+	@Column(name="PHYSICAL_FEATURE")
+	private String physicalFeature;
+
+	@Column(name="PHYSICAL_PCODE_CD")
+	private int physicalPcodeCd;
 
 	@Column(name="RECORD_CREATED_BY")
 	private String recordCreatedBy;

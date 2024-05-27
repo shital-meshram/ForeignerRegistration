@@ -1,4 +1,4 @@
-package com.master.dropdown.MasterDropdown.Master;
+package com.master.dropdown.MasterDropdown.MasterPojo;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -10,20 +10,20 @@ import java.util.Date;
 
 
 /**
- * The persistent class for the m_travel_type database table.
+ * The persistent class for the m_relation_type database table.
  * 
  */
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Table(name="m_travel_type")
-@NamedQuery(name="MTravelType.findAll", query="SELECT m FROM MTravelType m")
-public class MTravelType implements Serializable {
+@Table(name="m_relation_type")
+@NamedQuery(name="MRelationType.findAll", query="SELECT m FROM MRelationType m")
+public class MRelationType implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@EmbeddedId
-	private MTravelTypePK id;
+	private MRelationTypePK id;
 
 	@Column(name="DUMMY_COLUMN_1")
 	private String dummyColumn1;
@@ -64,8 +64,9 @@ public class MTravelType implements Serializable {
 	@Column(name="RECORD_UPDATED_ON")
 	private Date recordUpdatedOn;
 
-	@Column(name="TRVLEL_TYPE")
-	private String trvlelType;
+	@Column(name="RELATION_TYPE")
+	private String relationType;
+
 
 
 }

@@ -1,4 +1,4 @@
-package com.master.dropdown.MasterDropdown.Master;
+package com.master.dropdown.MasterDropdown.MasterPojo;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -10,20 +10,20 @@ import java.util.Date;
 
 
 /**
- * The persistent class for the m_nationality database table.
+ * The persistent class for the m_gender database table.
  * 
  */
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Table(name="m_nationality")
-@NamedQuery(name="MNationality.findAll", query="SELECT m FROM MNationality m")
-public class MNationality implements Serializable {
+@Table(name="m_gender")
+@NamedQuery(name="MGender.findAll", query="SELECT m FROM MGender m")
+public class MGender implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@EmbeddedId
-	private MNationalityPK id;
+	private MGenderPK id;
 
 	@Column(name="DUMMY_COLUMN_1")
 	private String dummyColumn1;
@@ -31,10 +31,10 @@ public class MNationality implements Serializable {
 	@Column(name="DUMMY_COLUMN_2")
 	private String dummyColumn2;
 
+	private String gender;
+
 	@Column(name="IS_FIRST_SYNC_DONE")
 	private String isFirstSyncDone;
-
-	private String nationality;
 
 	@Column(name="RECORD_CREATED_BY")
 	private String recordCreatedBy;
